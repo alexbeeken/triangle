@@ -1,0 +1,9 @@
+body {
+  background-image: url("duck.jpg");
+  background-size: 100% 600px;
+}
+
+#container {
+  background-color: white;
+  width: 300px;
+}
