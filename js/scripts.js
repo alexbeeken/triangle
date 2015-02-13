@@ -27,7 +27,7 @@ $(document).ready( function() {
 
     $(".result").text(result);
 
-    if (result === "equilateral") {
+    if (result !== "not a triangle") {
 
       $("#triangle-up").css({
         "border-bottom": (side1 * 2) + 'px solid red'
