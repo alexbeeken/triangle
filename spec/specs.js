@@ -13,10 +13,15 @@ describe('triangle', function() {
   });
 
   it("returns 'not a triangle' if a side is 0", function() {
-    expect(triangle(0, 2, 3)).to.equal("not a triangle")
+    expect(triangle(0, 2, 3)).to.equal("not a triangle");
   });
 
   it("returns 'not a triangle' if one side is alt least as long as the other two combined", function() {
-    expect(triangle(1, 2, 4)).to.equal("not a triangle")
+    expect(triangle(1, 2, 4)).to.equal("not a triangle");
   });
+
+  it("returns scalene for 2, 3, 4", function() {
+    expect(triangle(3,2,4)).to.equal("scalene");
+  });
+  
 });
