@@ -11,7 +11,8 @@ var triangle = function(side1, side2, side3) {
   }
   else {
     return "scalene";
-  };
+  }
+
 };
 
 $(document).ready( function() {
@@ -29,8 +30,10 @@ $(document).ready( function() {
 
     if (result !== "not a triangle") {
 
+      var windowWidthR = $(window).width();
+
       $("#triangle-up").css({
-        "border-bottom": (side1 * 2) + 'px solid red'
+        "border-bottom": (side1) + 'px solid red'
       });
 
       $("#triangle-up").css({
@@ -52,5 +55,16 @@ $(document).ready( function() {
     $(".result").show();
 
     event.preventDefault();
+  });
+});
+
+
+$(window).resize(function () {
+  var windowWidthR = $(window).width();
+  $(".triangle").css({
+    "border-top": windowWidthR / 2 + 'px solid rgba(255, 255, 0, 1)'
+  });
+  $(".triangle").css({
+    "border-right": windowWidthR / 1.5 + 'px solid transparent'
   });
 });
