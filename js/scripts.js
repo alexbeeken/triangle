@@ -15,6 +15,7 @@ var triangle = function(side1, side2, side3) {
 };
 
 $(document).ready( function() {
+
   $("form#triangle_form").submit(function(event) {
     $(".result").text("");
 
@@ -26,8 +27,30 @@ $(document).ready( function() {
 
     $(".result").text(result);
 
+    if (result === "equilateral") {
+
+      $("#triangle-up").css({
+        "border-bottom": (side1 * 2) + 'px solid red'
+      });
+
+      $("#triangle-up").css({
+        "border-left": side2 + 'px solid transparent'
+      });
+
+      $("#triangle-up").css({
+        "border-right": side3 + 'px solid transparent'
+      });
+
+      $('#triangle-up').show();
+
+    } else {
+
+      $("#triangle-up").hide();
+
+    }
+
     $(".result").show();
 
     event.preventDefault();
-  })
-})
+  });
+});
